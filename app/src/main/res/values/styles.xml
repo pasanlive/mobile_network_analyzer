@@ -5,4 +5,7 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="NetworkInfoLabelStyle">
+        <item name="android:minWidth">200dp</item>
+    </style>
 </resources>

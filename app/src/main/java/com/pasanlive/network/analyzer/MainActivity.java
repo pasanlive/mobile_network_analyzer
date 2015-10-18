@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.os.Build;
 
 import com.pasanlive.network.analyzer.fragments.LogViewFragment;
+import com.pasanlive.network.analyzer.fragments.NetworkInfoFragment;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -22,7 +23,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new LogViewFragment())
+                    .add(R.id.container, new NetworkInfoFragment())
                     .commit();
         }
     }
@@ -44,6 +45,16 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        } else if (id == R.id.action_network_info) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.container, new NetworkInfoFragment())
+                    .commit();
+            return true;
+        } else if (id == R.id.action_log_view) {
+            getFragmentManager().beginTransaction()
+                    .replace(R.id.container, new LogViewFragment())
+                    .commit();
             return true;
         }
 
